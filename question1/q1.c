@@ -8,6 +8,8 @@
 char buf[BUFSIZE]; // buffer for ungetch
 int bufp = 0; // next free position in buf
 
+// https://en.cppreference.com/w/c/keyword.html
+// I decided to become liberal by putting all the keywords including C23...
 struct key {
     char *word;
     int count;
