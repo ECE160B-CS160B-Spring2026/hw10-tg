@@ -48,7 +48,7 @@ int main() {
 
 void printThatArray(tnode *array[], int index) {
     for(int i = 0; i < index; i++) {
-        printf("%s, %d\n", array[i]->word, array[i]->count);
+        printf("%d %s\n", array[i]->count, array[i]->word);
     }
 }
 
