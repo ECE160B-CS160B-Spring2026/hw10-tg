@@ -52,7 +52,7 @@ struct nlist *install(int val)
     return np;
 }
 
-void intersection(int output[], int array1[], int lenArr1, int array2[], int lenArr2) {
+int intersection(int output[], int array1[], int lenArr1, int array2[], int lenArr2) {
     int output_index = 0;
     for (int i = 0; i < lenArr1; i++) {
        install(array1[i]); 
@@ -62,17 +62,39 @@ void intersection(int output[], int array1[], int lenArr1, int array2[], int len
             output[output_index++] = array2[i]; 
         }
     }
+    return output_index;
+}
+
+int min(int a, int b) {
+    return (a < b) ? a : b;  
 }
 
 int main()
 {
-    int array1[] = {10, 13, 15, 1, 4, 9, 8, 6, 7, 2, 19}; 
-    int array2[] = {14, 15, 1, 4, 9, 2, 5, 19};
-    int output[5];
+    int array1[100]; 
+    int array2[100];
+    int output[100];
+    int array1Len;
+    int array2Len; 
 
-    intersection(output, array1, ARRAY_LEN(array1), array2, ARRAY_LEN(array2));
-    for (int i = 0; i < 5; i++) 
-        printf("%d\n", output[i]); 
+    printf("arr1 pts: "); 
+    scanf("%d", &array1Len);
+    printf("arr2 pts: ");
+    scanf("%d", &array2Len); 
+
+    for (int i = 0; i < min(array1Len, 100); i++) {
+        scanf("%d", array1 + i); 
+    }
+    for (int i = 0; i < min(array2Len, 100); i++) {
+        scanf("%d", array2 + i); 
+    }
+    
+
+    int outputsize = intersection(output, array1, array1Len, array2, array2Len);
+    for (int i = 0; i < outputsize; i++) {
+        printf("%d ", output[i]); 
+    }
+    printf("\n");
 
     // Example of using a hash table
     return 0;
