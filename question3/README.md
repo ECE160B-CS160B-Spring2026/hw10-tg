@@ -10,4 +10,15 @@ Have your main function accept the following inputs: number of points in array1,
 
 Compile Steps:
 
+gcc q3.c
+./a.out
+
+Input: 
+
+pts: 4
+1 4 5 9
+3 2 4 5
+
 Output:
+
+4 5
