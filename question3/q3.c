@@ -79,9 +79,7 @@ int main()
 
     printf("arr1 pts: "); 
     scanf("%d", &array1Len);
-    printf("arr2 pts: ");
-    scanf("%d", &array2Len); 
-
+    array2len = array1len;
     for (int i = 0; i < min(array1Len, 100); i++) {
         scanf("%d", array1 + i); 
     }
